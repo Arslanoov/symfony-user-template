@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Messenger API",
+        "title": "App API",
         "description": "HTTP JSON API",
         "version": "1.0.0"
     },

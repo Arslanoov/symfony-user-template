@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * @Route(path="/", name="home", methods={"GET"})
  * @OA\Info(
  *     version="1.0.0",
- *     title="Messenger API",
+ *     title="App API",
  *     description="HTTP JSON API",
  * ),
  * @OA\Server(
@@ -72,7 +72,7 @@ final class Home
     {
         return $this->response->json([
             'v' => '1.0',
-            'name' => 'messenger'
+            'name' => 'app'
         ]);
     }
 }

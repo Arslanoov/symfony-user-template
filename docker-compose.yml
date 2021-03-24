@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  messenger-nginx:
+  app-nginx:
     build:
       context: app/docker
       dockerfile: dev/nginx/Dockerfile
@@ -9,7 +9,7 @@ services:
     ports:
       - "8081:80"
 
-  messenger-php-fpm:
+  app-php-fpm:
     build:
       context: app/docker
       dockerfile: dev/php-fpm/Dockerfile
@@ -19,12 +19,12 @@ services:
       APP_ENV: dev
       APP_DEBUG: 1
       PHP_IDE_CONFIG: serverName=API
-      DB_HOST: messenger-postgres
+      DB_HOST: app-postgres
       DB_USER: app
       DB_PASSWORD: secret
       DB_NAME: app
 
-  messenger-php-cli:
+  app-php-cli:
     build:
       context: app/docker
       dockerfile: dev/php-cli/Dockerfile
@@ -33,21 +33,21 @@ services:
     environment:
       APP_ENV: dev
       APP_DEBUG: 1
-      DB_HOST: messenger-postgres
+      DB_HOST: app-postgres
       DB_USER: app
       DB_PASSWORD: secret
       DB_NAME: app
 
-  messenger-postgres:
+  app-postgres:
     image: postgres:13.2-alpine
     environment:
       POSTGRES_USER: app
       POSTGRES_PASSWORD: secret
       POSTGRES_DB: app
     volumes:
-      - messenger-postgres:/var/lib/postgresql/data
+      - app-postgres:/var/lib/postgresql/data
     ports:
       - "54321:5432"
 
 volumes:
-  messenger-postgres:
+  app-postgres:

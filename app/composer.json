@@ -1,7 +1,7 @@
 {
     "type": "project",
     "license": "MIT",
-    "name": "arslanoov/messenger-api",
+    "name": "arslanoov/app-api",
     "description": "",
     "require": {
         "php": ">=8.0",
