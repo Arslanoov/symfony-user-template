@@ -1,0 +1,3 @@
+doctrine_migrations:
+    migrations_paths:
+        'Migration': '%kernel.project_dir%/src/App/Database/Migration'
