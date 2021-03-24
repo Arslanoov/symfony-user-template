@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<psalm
+        totallyTyped="true"
+        resolveFromConfigFile="true"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://getpsalm.org/schema/config"
+        xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="src" />
+        <ignoreFiles>
+            <file name="src/App/Kernel.php" />
+            <directory name="src/User/Test" />
+            <directory name="tests/Functional" />
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+
+    <issueHandlers>
+        <DeprecatedClass errorLevel="suppress" />
+    </issueHandlers>
+</psalm>
